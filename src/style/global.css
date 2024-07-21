@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+button {
+  min-width: 100px;
+}
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Mulish";
+}
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-title {
+  font-size: 24px;
+  font-weight: 400;
+}
+.container {
+  width: 90%;
+  margin: 0% auto;
+}
+.centred {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 89vh;
+}
+.textInput {
+  padding: 10px;
+  width: 30vw;
+  border-radius: 3px;
+  box-shadow: 3px 3px inset rgb(206, 206, 206);
+  border: 1px rgb(206, 206, 206) solid;
+  outline: none;
+}
+.submitInput {
+  padding: 10px;
+  width: 10vw;
+  margin-left: 20px;
+  box-shadow: 3px 3px rgb(206, 206, 206);
+  background: #8585f1;
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+.submitInput:active {
+  transition: all 0.3s;
+  box-shadow: 3px 3px rgb(206, 206, 206) inset;
+  background: #6161eb;
+}
+.title {
+  font-size: 64px;
+  color: rgb(69, 69, 69);
+  text-shadow: 3px 3px rgb(206, 206, 206);
+}
+.topPanel {
+  height: 5%;
+  width: 100%;
+}
+.backButton {
+  padding: 10px;
+  width: 10vw;
+  margin-left: 20px;
+  box-shadow: 3px 3px rgb(206, 206, 206);
+  background: #8585f1;
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+.backButton:active {
+  transition: all 0.3s;
+  box-shadow: 3px 3px rgb(206, 206, 206) inset;
+  background: #6161eb;
+}
+.messageBlock {
+  height: 95%;
+  width: 100%;
+  row-gap: 10px;
+  overflow-y: scroll;
+}
+.systemMessage {
+  margin-top: 10px;
+  border-radius: 10px;
+  margin-left: 5%;
+  width: 90%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  background-color: #6161eb;
+  box-shadow: 3px 3px rgb(206, 206, 206) inset;
+}
+.message {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #6161eb;
+  box-shadow: 3px 3px rgb(206, 206, 206) inset;
+  color: white;
+  width: 40%;
+  margin-top: 10px;
+}
+.userMessage {
+  margin-left: 54%;
+}
+.otherUserMessage {
+  margin-left: 5%;
+}
+.textWrap {
+  max-width: 100%;
+  height: max-content;
+  text-wrap: wrap;
+  word-wrap: break-word;
+}
+.sendMessageForm {
+  height: 5%;
+  width: 100%;
+}
+.messageFromText {
+  width: 79%;
+  padding: 5px;
+  height: 100%;
+  border: none;
+  box-shadow: 3px 3px rgb(206, 206, 206) inset;
+}
+.messageFormSubmit {
+  height: 100%;
+  width: 20%;
+  box-shadow: 3px 3px rgb(206, 206, 206);
+  background: #8585f1;
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+.messageFormSubmit:active {
+  transition: all 0.3s;
+  box-shadow: 3px 3px rgb(206, 206, 206) inset;
+  background: #6161eb;
+}
