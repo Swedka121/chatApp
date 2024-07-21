@@ -6,6 +6,9 @@ First, run the development server:
 cd client
 npm run dev
 ```
+
+Dowload [server](https://github.com/Swedka121/chatAppServer) and run:
+
 ```
 cd server
 npm run dev
