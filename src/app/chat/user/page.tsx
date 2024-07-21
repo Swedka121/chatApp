@@ -1,5 +1,5 @@
-import UserFrom from "@/components/userFrom";
 import React from "react";
+import UserFrom from "@/components/userFrom";
 
 export default function Page() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { observer } from "mobx-react";
-import { useStore } from "@/store/chatStoreProvider";
+import { useStore } from "@/store/chatStore";
 
 export default observer(function SendMessageFrom() {
   const [message, useMessage] = useState<string>("");
@@ -11,6 +11,7 @@ export default observer(function SendMessageFrom() {
     store.sendMessage(message);
     useMessage("");
   }
+
   return (
     <form
       onSubmit={(ev) => {

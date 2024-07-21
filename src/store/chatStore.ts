@@ -1,15 +1,6 @@
-import { socket } from "@/network";
+import { socket } from "@/other/network";
 import { makeAutoObservable } from "mobx";
-
-export interface IUser {
-  username: string;
-  userId: string;
-}
-export interface IMessage {
-  author: IUser;
-  content: string;
-  type: "SYSTEM" | "USER";
-}
+import { IUser, IMessage } from "@/other/interfaces";
 
 class chatStore {
   roomId: string;
@@ -17,6 +8,7 @@ class chatStore {
   userId: string;
   userColor: string;
   messages: Array<IMessage>;
+
   constructor() {
     this.roomId = "";
     this.username = "";
@@ -28,38 +20,49 @@ class chatStore {
     });
     makeAutoObservable(this);
   }
-  initUser(username: string) {
+
+  reset(): void {
+    this.roomId = "";
+    this.username = "";
+    this.userId = "";
+    this.userColor = "";
+    this.messages = [];
+  }
+
+  initUser(username: string): void {
     socket.emit("systemEvent_getUserInfo", username, (user: IUser) => {
       this.username = user.username;
       this.userId = user.userId;
     });
-    return;
   }
-  connectToRoom() {
-    console.log(this);
+
+  connectToRoom(): void {
     socket.emit("userEvent_connectToRoom", this.roomId);
   }
-  disconnectFromRoom() {
+
+  disconnectFromRoom(): void {
     socket.emit("userEvent_disconnectFromRoom");
-    this.messages = [];
-    this.roomId = "";
-    this.userId = "";
-    this.username = "";
+    this.reset();
   }
+
   getUser(): IUser {
     return { username: this.username, userId: this.userId };
   }
+
   getMessages(): Array<IMessage> {
     return this.messages;
   }
-  setRoomId(roomId: string) {
+
+  setRoomId(roomId: string): void {
     console.log(this);
     if (!roomId) return;
     this.roomId = roomId;
   }
-  sendMessage(content: string) {
+
+  sendMessage(content: string): void {
     socket.emit("userEvent_sendMessage", content);
   }
 }
 
-export default chatStore;
+export const store = new chatStore();
+export const useStore = () => store;

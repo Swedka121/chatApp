@@ -1,7 +1,7 @@
 "use client";
-import { observer } from "mobx-react";
 import React, { useState } from "react";
-import { useStore } from "@/store/chatStoreProvider";
+import { observer } from "mobx-react";
+import { useStore } from "@/store/chatStore";
 import { useRouter } from "next/navigation";
 
 export default observer(function RoomForm() {
@@ -9,11 +9,12 @@ export default observer(function RoomForm() {
   const store = useStore();
   const router = useRouter();
 
-  function onSubmitForm() {
+  function onSubmitForm(): void {
     store.setRoomId(roomId);
     router.push("/chat/user");
     useRoomId("");
   }
+
   return (
     <form
       style={{ marginTop: "50px" }}

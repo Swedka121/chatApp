@@ -1,7 +1,7 @@
 "use client";
-import { observer } from "mobx-react";
-import { useStore } from "@/store/chatStoreProvider";
 import React, { useState } from "react";
+import { observer } from "mobx-react";
+import { useStore } from "@/store/chatStore";
 import { useRouter } from "next/navigation";
 
 export default observer(function UserFrom() {
@@ -9,7 +9,7 @@ export default observer(function UserFrom() {
   const [username, useUsername] = useState<string>("");
   const router = useRouter();
 
-  function onSubmit() {
+  function onSubmit(): void {
     store.initUser(username);
     store.connectToRoom();
     useUsername("");

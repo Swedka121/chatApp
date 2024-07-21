@@ -1,7 +1,7 @@
 "use client";
-import { useStore } from "@/store/chatStoreProvider";
-import { observer } from "mobx-react";
 import React from "react";
+import { useStore } from "@/store/chatStore";
+import { observer } from "mobx-react";
 
 export default observer(function ChatBlock() {
   const store = useStore();

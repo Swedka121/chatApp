@@ -1,19 +1,21 @@
 "use client";
-import { store } from "@/store/chatStoreProvider";
-import { useRouter } from "next/navigation";
 import React from "react";
+import { useStore } from "@/store/chatStore";
+import { useRouter } from "next/navigation";
+import { observer } from "mobx-react";
 
-export default function BackButton() {
+export default observer(function BackButton() {
   const router = useRouter();
+  const store = useStore();
   return (
     <button
       className="backButton"
       onClick={(ev) => {
-        store.disconnectFromRoom()
+        store.disconnectFromRoom();
         router.push("/");
       }}
     >
       Back
     </button>
   );
-}
+});
